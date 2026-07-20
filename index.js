@@ -4,8 +4,8 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMembers
-    ]
-});
+    ]       
+}); 
 
 // ID do seu canal de boas-vindas:
 const CANAL_BOAS_VINDAS_ID = '1528712355884695585';
@@ -15,7 +15,7 @@ const CANAL_SUPORTE_ID = '1528712356438212621';
 const CANAL_INFORMACAO_ID = '1528712356438212624';
 
 // Token do seu bot:
-const TOKEN_DO_BOT = 'MTUxOTMyNjcyMDc0OTA4MDcxNw.Glot8a.PhpibNY6cEqFMOc5DEAxv_Ufo40NHqS-2mBJac';
+const TOKEN_DO_BOT = 'MTUxOTMyNjcyMDc0OTA4MDcxNw.G61imj.jffqspR2_QW9dijaaTB70VdrQpXD_MmSgssHBw';
 
 client.once('ready', () => {
     console.log(`🤖 Bot online com sucesso como ${client.user.tag}!`);
