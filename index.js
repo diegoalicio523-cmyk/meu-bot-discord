@@ -1,29 +1,28 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, Partials } = require('discord.js');
 
-// Cria a instância do bot com as permissões (intents) básicas
+// Configuração completa de permissões para garantir leitura de mensagens
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent
-    ]
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.DirectMessages
+    ],
+    partials: [Partials.Channel]
 });
 
-// Evento que roda assim que o bot fica online
 client.once('ready', () => {
     console.log(`🤖 Bot online com sucesso como: ${client.user.tag}!`);
 });
 
-// Exemplo simples de resposta a mensagens
-client.on('messageCreate', (message) => {
-    // Evita responder a outros bots
+client.on('messageCreate', async (message) => {
+    // Ignora mensagens enviadas por bots
     if (message.author.bot) return;
 
-    // Responde ao comando !ping
-    if (message.content === '!ping') {
-        message.reply('Pong! 🏓');
+    // Testa se a mensagem é exatamente !ping (não importa se maiúscula ou minúscula)
+    if (message.content.toLowerCase() === '!ping') {
+        await message.reply('Pong! 🏓');
     }
 });
 
-// Conecta o bot usando a Variável de Ambiente configurada no Render
 client.login(process.env.DISCORD_TOKEN);
