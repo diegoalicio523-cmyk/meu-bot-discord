@@ -15,7 +15,7 @@ const CANAL_SUPORTE_ID = '1528712356438212621';
 const CANAL_INFORMACAO_ID = '1528712356438212624';
 
 // Token do seu bot:
-const TOKEN_DO_BOT = 'MTUxOTMyNjcyMDc0OTA4MDcxNw.G_Gy0i.vMtpn5j28e51-4xn65-UO-85OjYlKW1pHo4C_Q';
+const TOKEN_DO_BOT = process.env.DISCORD_TOKEN;
 
 client.once('ready', () => {
     console.log(`🤖 Bot online com sucesso como ${client.user.tag}!`);
