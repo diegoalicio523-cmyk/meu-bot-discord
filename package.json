@@ -1,9 +1,9 @@
 {
   "name": "meu-bot-discord",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index"
   },
   "dependencies": {
     "discord.js": "^14.14.1"
